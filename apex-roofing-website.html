@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apex Roofing Solutions - Trusted roofing services in Texas. Licensed, insured, and ready 24/7 for emergency repairs. Get your free estimate today.">
+    <title>Apex Roofing Solutions | Premium Roofing Services in Texas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-orange: #FF6B35;
+            --dark-bg: #0A0E27;
+            --darker-bg: #060815;
+            --card-bg: #141B3A;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B8C5D6;
+            --accent-blue: #2D4B73;
+            --success-green: #10B981;
+            --border-color: rgba(255, 107, 53, 0.15);
+            --shadow-color: rgba(255, 107, 53, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 1.5rem 0;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-orange), #FF8C5A);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-orange);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-orange), #FF8C5A);
+            color: white;
+            box-shadow: 0 4px 20px var(--shadow-color);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--shadow-color);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--primary-orange);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-orange);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(45, 75, 115, 0.2) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        .hero-background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 107, 53, 0.03) 2px, rgba(255, 107, 53, 0.03) 4px);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid var(--border-color);
+            color: var(--primary-orange);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-highlight {
+            color: var(--primary-orange);
+            -webkit-text-fill-color: var(--primary-orange);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInRight 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-img-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-img-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hero-img-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(10, 14, 39, 0.95), transparent);
+            padding: 2rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(20, 27, 58, 0.5);
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: var(--card-bg);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-orange);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Emergency Banner */
+        .emergency-banner {
+            background: linear-gradient(135deg, #DC2626, #EF4444);
+            padding: 1rem 0;
+            text-align: center;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .emergency-banner-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            font-weight: 600;
+        }
+
+        .emergency-icon {
+            font-size: 1.5rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .section-alt {
+            background: var(--darker-bg);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid var(--border-color);
+            color: var(--primary-orange);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+            border-color: var(--primary-orange);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-orange), #FF8C5A);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features li {
+            color: var(--text-secondary);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+            font-weight: bold;
+        }
+
+        /* Why Choose Us */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-orange);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(10, 14, 39, 0.9), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-label {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-orange);
+        }
+
+        .stars {
+            color: #FFC107;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-orange), #FF8C5A);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Insurance Section */
+        .insurance-section {
+            background: linear-gradient(135deg, var(--card-bg), var(--accent-blue));
+            border-radius: 30px;
+            padding: 4rem;
+            border: 1px solid var(--border-color);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .insurance-badges {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .badge-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--primary-orange);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-content {
+            padding: 0 2rem 1.5rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            border-color: var(--primary-orange);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-orange), #FF8C5A);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-details p {
+            color: var(--text-secondary);
+        }
+
+        .contact-details a {
+            color: var(--primary-orange);
+            text-decoration: none;
+        }
+
+        .contact-form {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            background: var(--dark-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-orange);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .map-container {
+            margin-top: 3rem;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 400px;
+            border: 1px solid var(--border-color);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Service Areas */
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .area-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .area-card:hover {
+            border-color: var(--primary-orange);
+            transform: translateY(-5px);
+        }
+
+        .area-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .area-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--darker-bg);
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-about h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .footer-about p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column h4 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--card-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-orange);
+            transform: translateY(-3px);
+        }
+
+        /* Financing Banner */
+        .financing-banner {
+            background: linear-gradient(135deg, var(--primary-orange), #FF8C5A);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 30px;
+            margin: 4rem 0;
+        }
+
+        .financing-banner h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .financing-banner p {
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                padding-top: 6rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .insurance-section {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .services-grid,
+            .gallery-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .insurance-section {
+                padding: 2.5rem;
+            }
+
+            .insurance-badges {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading Animation */
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        <div class="emergency-banner-content">
+            <span class="emergency-icon">🚨</span>
+            <span>24/7 Emergency Roofing Services Available - Call Now: (512) 555-ROOF</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">▲</div>
+                <span>Apex Roofing</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#areas">Service Areas</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="tel:5125557663" class="btn btn-secondary">📞 Call Now</a>
+                <a href="#contact" class="btn btn-primary">Get Free Estimate</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">⭐ Texas's Most Trusted Roofers</span>
+                <h1>
+                    <span class="hero-highlight">Reliable Roofing</span><br>
+                    Services You Can Trust
+                </h1>
+                <p>Premium roofing solutions for residential and commercial properties. Licensed, insured, and backed by over 25 years of excellence in Texas.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get Free Estimate →</a>
+                    <a href="tel:5125557663" class="btn btn-secondary">📞 (512) 555-ROOF</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">25+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5,000+</span>
+                        <span class="stat-label">Roofs Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">4.9★</span>
+                        <span class="stat-label">Average Rating</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-img-container">
+                    <img src="https://images.unsplash.com/photo-1632498395737-e32f9bc5e92b?w=800&q=80" alt="Professional Roofing Services">
+                    <div class="hero-img-overlay">
+                        <p style="font-weight: 600; margin-bottom: 0.5rem;">✓ Licensed & Insured</p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Texas Contractor License #123456</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Our Services</span>
+                <h2 class="section-title">Expert Roofing Solutions</h2>
+                <p class="section-subtitle">From emergency repairs to complete replacements, we handle every roofing need with precision and care.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔨</div>
+                    <h3>Roof Repair</h3>
+                    <p>Fast, reliable repairs to fix leaks, damaged shingles, and structural issues before they become major problems.</p>
+                    <ul class="service-features">
+                        <li>Leak detection & repair</li>
+                        <li>Shingle replacement</li>
+                        <li>Flashing repair</li>
+                        <li>Emergency patching</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">Learn More →</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">🏠</div>
+                    <h3>Roof Replacement</h3>
+                    <p>Complete roof replacement with premium materials and craftsmanship. Lifetime warranty included.</p>
+                    <ul class="service-features">
+                        <li>Free inspection</li>
+                        <li>Premium materials</li>
+                        <li>Lifetime warranty</li>
+                        <li>Fast installation</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">Learn More →</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">⚡</div>
+                    <h3>Storm Damage Repair</h3>
+                    <p>24/7 emergency response for storm damage. We work directly with your insurance company.</p>
+                    <ul class="service-features">
+                        <li>24/7 emergency service</li>
+                        <li>Insurance assistance</li>
+                        <li>Free damage assessment</li>
+                        <li>Rapid response team</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">Learn More →</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">🏢</div>
+                    <h3>Commercial Roofing</h3>
+                    <p>Specialized commercial roofing for businesses, apartments, and industrial properties.</p>
+                    <ul class="service-features">
+                        <li>Flat roof systems</li>
+                        <li>TPO & EPDM</li>
+                        <li>Minimal disruption</li>
+                        <li>Commercial warranty</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">Learn More →</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">🏡</div>
+                    <h3>Residential Roofing</h3>
+                    <p>Custom residential roofing solutions designed to protect your home and increase its value.</p>
+                    <ul class="service-features">
+                        <li>Architectural shingles</li>
+                        <li>Metal roofing</li>
+                        <li>Tile roofing</li>
+                        <li>Custom colors</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">Learn More →</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">🚨</div>
+                    <h3>Emergency Roofing</h3>
+                    <p>Round-the-clock emergency roofing services. Available 24/7 for urgent repairs and protection.</p>
+                    <ul class="service-features">
+                        <li>24/7 availability</li>
+                        <li>30-minute response</li>
+                        <li>Temporary protection</li>
+                        <li>Immediate repairs</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section section-alt" id="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Why Choose Us</span>
+                <h2 class="section-title">The Apex Difference</h2>
+                <p class="section-subtitle">We're not just another roofing company. We're your trusted partner in protecting what matters most.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🏆</div>
+                    <h3>25+ Years Experience</h3>
+                    <p>Over two decades of roofing excellence in Texas. Trusted by thousands of homeowners.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">✓</div>
+                    <h3>Licensed & Insured</h3>
+                    <p>Fully licensed, bonded, and insured. Your protection is our priority.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Response Time</h3>
+                    <p>24/7 emergency services with rapid response. We're there when you need us most.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">💎</div>
+                    <h3>Premium Materials</h3>
+                    <p>Only the highest quality materials from trusted manufacturers. Lifetime warranties available.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">💰</div>
+                    <h3>Competitive Pricing</h3>
+                    <p>Fair, transparent pricing with flexible financing options. No hidden fees.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">⭐</div>
+                    <h3>5-Star Service</h3>
+                    <p>Consistently rated 5 stars on Google and Yelp. Your satisfaction is guaranteed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Gallery -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Our Work</span>
+                <h2 class="section-title">Before & After Gallery</h2>
+                <p class="section-subtitle">See the transformation. Quality workmanship that speaks for itself.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1604762524889-dadf4581ce7c?w=600&q=80" alt="Roof Replacement Before">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Storm Damage Repair - Austin, TX</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=80" alt="Roof Replacement After">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Complete Replacement - Dallas, TX</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=600&q=80" alt="Commercial Roofing">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Commercial Project - Houston, TX</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=600&q=80" alt="Residential Roofing">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Residential Upgrade - San Antonio, TX</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1614359351887-20ee6c4c8a0c?w=600&q=80" alt="Metal Roofing">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Metal Roof Installation - Plano, TX</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1597476329446-b78b42ddb87a?w=600&q=80" alt="Roof Repair">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Emergency Repair - Fort Worth, TX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="insurance-section fade-in">
+                <div>
+                    <span class="section-badge" style="background: rgba(255,255,255,0.1);">Insurance Claims</span>
+                    <h2 class="section-title" style="margin-top: 1rem;">We Work With Your Insurance</h2>
+                    <p style="color: var(--text-secondary); margin-top: 1rem; line-height: 1.8;">
+                        Dealing with insurance claims can be overwhelming. Our experienced team handles the entire process for you - from documentation to negotiation. We work directly with all major insurance companies to ensure you get the coverage you deserve.
+                    </p>
+                    <div style="margin-top: 2rem;">
+                        <a href="#contact" class="btn btn-primary">Start Your Claim →</a>
+                    </div>
+                </div>
+                <div class="insurance-badges">
+                    <div class="badge">
+                        <div class="badge-icon">📋</div>
+                        <div class="badge-label">Free Inspection</div>
+                    </div>
+                    <div class="badge">
+                        <div class="badge-icon">📸</div>
+                        <div class="badge-label">Documentation</div>
+                    </div>
+                    <div class="badge">
+                        <div class="badge-icon">💼</div>
+                        <div class="badge-label">Claim Processing</div>
+                    </div>
+                    <div class="badge">
+                        <div class="badge-icon">✓</div>
+                        <div class="badge-label">Approval Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="reviews">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Testimonials</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Don't just take our word for it. Here's what Texas homeowners are saying about us.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Apex Roofing replaced our entire roof after storm damage. They handled everything with our insurance company and the work was completed in just 3 days. Absolutely phenomenal service!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JM</div>
+                        <div class="author-info">
+                            <h4>Jennifer Martinez</h4>
+                            <p>Austin, TX • 2 weeks ago</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Best roofing company in Dallas! They responded to our emergency leak at 10pm on a Saturday. Professional, fast, and reasonably priced. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RW</div>
+                        <div class="author-info">
+                            <h4>Robert Williams</h4>
+                            <p>Dallas, TX • 1 month ago</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"We've used Apex for both our home and rental properties. Their commercial work is just as impressive as residential. Trustworthy, professional, and always on time."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ST</div>
+                        <div class="author-info">
+                            <h4>Sarah Thompson</h4>
+                            <p>Houston, TX • 1 month ago</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"From quote to completion, everything was perfect. They explained every step, gave us options, and the crew was incredibly respectful of our property. Our new roof looks amazing!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MC</div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>San Antonio, TX • 2 months ago</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"After getting quotes from 5 different companies, Apex offered the best value and quality. A year later, our roof still looks brand new. Worth every penny!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LB</div>
+                        <div class="author-info">
+                            <h4>Lisa Brown</h4>
+                            <p>Plano, TX • 3 months ago</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Emergency roof repair after a severe hailstorm. They came out the same day, fixed everything professionally, and even helped with our insurance claim. Outstanding service!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DG</div>
+                        <div class="author-info">
+                            <h4>David Garcia</h4>
+                            <p>Fort Worth, TX • 3 months ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financing Banner -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="financing-banner fade-in">
+                <h2>Flexible Financing Available</h2>
+                <p>Don't let budget concerns delay your roofing project. We offer flexible financing options with approved credit.</p>
+                <a href="#contact" class="btn btn-secondary" style="background: white; color: var(--primary-orange);">Learn About Financing →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="section" id="areas">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Service Areas</span>
+                <h2 class="section-title">Serving All of Texas</h2>
+                <p class="section-subtitle">Professional roofing services across major Texas cities and surrounding areas.</p>
+            </div>
+            <div class="areas-grid">
+                <div class="area-card fade-in">
+                    <h3>Austin</h3>
+                    <p>& Travis County</p>
+                </div>
+                <div class="area-card fade-in">
+                    <h3>Dallas</h3>
+                    <p>& Collin County</p>
+                </div>
+                <div class="area-card fade-in">
+                    <h3>Houston</h3>
+                    <p>& Harris County</p>
+                </div>
+                <div class="area-card fade-in">
+                    <h3>San Antonio</h3>
+                    <p>& Bexar County</p>
+                </div>
+                <div class="area-card fade-in">
+                    <h3>Fort Worth</h3>
+                    <p>& Tarrant County</p>
+                </div>
+                <div class="area-card fade-in">
+                    <h3>Plano</h3>
+                    <p>& Surrounding Areas</p>
+                </div>
+                <div class="area-card fade-in">
+                    <h3>Arlington</h3>
+                    <p>& Surrounding Areas</p>
+                </div>
+                <div class="area-card fade-in">
+                    <h3>El Paso</h3>
+                    <p>& El Paso County</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Get answers to the most common questions about our roofing services.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>How long does a roof replacement take?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Most residential roof replacements take 1-3 days depending on the size and complexity. We work efficiently while maintaining the highest quality standards. Commercial projects may take longer depending on the scope.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Do you offer warranties?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! We offer comprehensive warranties on both materials and workmanship. Material warranties range from 25 years to lifetime depending on the product. Our workmanship is backed by a 10-year labor warranty.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>How much does a new roof cost?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Roof costs vary based on size, materials, and complexity. A typical residential roof in Texas ranges from $8,000-$25,000. We provide free detailed estimates with transparent pricing and no hidden fees.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Can you work with my insurance company?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolutely! We have extensive experience working with all major insurance companies. We'll handle the entire claims process, including documentation, estimates, and negotiations to ensure you get the coverage you deserve.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Are you licensed and insured?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes, we are fully licensed, bonded, and insured in Texas. Our license number is #123456. We carry comprehensive liability insurance and workers' compensation to protect you and our team.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>Do you offer emergency roofing services?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! We provide 24/7 emergency roofing services throughout Texas. Whether it's storm damage, leaks, or structural issues, our rapid response team can be on-site within 30 minutes in most cases.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Get In Touch</span>
+                <h2 class="section-title">Request Your Free Estimate</h2>
+                <p class="section-subtitle">Ready to get started? Contact us today for a free, no-obligation estimate.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3>Call Us</h3>
+                            <p><a href="tel:5125557663">(512) 555-ROOF</a></p>
+                            <p style="font-size: 0.85rem; margin-top: 0.3rem;">24/7 Emergency Line</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <p><a href="mailto:info@apexroofing.com">info@apexroofing.com</a></p>
+                            <p style="font-size: 0.85rem; margin-top: 0.3rem;">We respond within 1 hour</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Visit Us</h3>
+                            <p>4567 Roofing Lane</p>
+                            <p>Austin, TX 78701</p>
+                            <p style="font-size: 0.85rem; margin-top: 0.3rem;">Mon-Fri: 7AM-7PM</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">⏰</div>
+                        <div class="contact-details">
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 7AM - 7PM</p>
+                            <p>Saturday: 8AM - 5PM</p>
+                            <p style="font-size: 0.85rem; margin-top: 0.3rem; color: var(--primary-orange);">Emergency: 24/7</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form fade-in">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Needed *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="repair">Roof Repair</option>
+                                <option value="replacement">Roof Replacement</option>
+                                <option value="storm">Storm Damage</option>
+                                <option value="commercial">Commercial Roofing</option>
+                                <option value="residential">Residential Roofing</option>
+                                <option value="emergency">Emergency Service</option>
+                                <option value="inspection">Free Inspection</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tell Us About Your Project</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Get Free Estimate →</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="map-container fade-in">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d221094.81893824127!2d-97.94730995!3d30.307182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b599a0cc032f%3A0x5d9b464bd469d57a!2sAustin%2C%20TX!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>Apex Roofing Solutions</h3>
+                <p>Texas's most trusted roofing company with over 25 years of experience. Licensed, insured, and committed to excellence in every project.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">f</a>
+                    <a href="#" class="social-link">in</a>
+                    <a href="#" class="social-link">★</a>
+                    <a href="#" class="social-link">IG</a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Roof Repair</a></li>
+                    <li><a href="#services">Roof Replacement</a></li>
+                    <li><a href="#services">Storm Damage</a></li>
+                    <li><a href="#services">Commercial</a></li>
+                    <li><a href="#services">Residential</a></li>
+                    <li><a href="#services">Emergency</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#areas">Service Areas</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Financing</a></li>
+                    <li><a href="#">Insurance Claims</a></li>
+                    <li><a href="#">Warranties</a></li>
+                    <li><a href="#">Free Estimate</a></li>
+                    <li><a href="#">Emergency Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Apex Roofing Solutions. All rights reserved. | Texas Contractor License #123456</p>
+            <div class="social-links">
+                <span style="color: var(--text-secondary);">Proudly Serving Texas Since 1999</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your request! We will contact you within 1 hour to schedule your free estimate.');
+            this.reset();
+        });
+
+        // Mobile menu toggle (placeholder)
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            alert('Mobile menu would open here. In production, this would toggle a mobile navigation overlay.');
+        });
+    </script>
+</body>
+</html>
